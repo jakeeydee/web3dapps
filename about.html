@@ -6,6 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+    <link rel="icon" href="data:,">
 
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans"
@@ -17,8 +18,6 @@
       rel="stylesheet"
       type="text/css"
     />
-
-    <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="style.css" />
 
     <link
@@ -53,8 +52,8 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white py-3">
       <div class="container d-flex justify-content-between align-items-center">
         <div>
-          <h1 class="logo mb-0">🎸 GuitarSetup3D</h1>
-          <small class="strapline">Explore your rig in 3D</small>
+          <h1 class="logo mb-0">🎸 Guitar Rig 3D</h1>
+          <small class="strapline">Explore a guitar rig in 3D</small>
         </div>
         <nav>
           <a href="index.html" class="btn btn-outline-light btn-sm me-2"
@@ -83,7 +82,13 @@
             <strong>Acoustic Guitar - Blender</strong><br />
             I created a detailed 3D model of an acoustic guitar with realistic
             textures and materials. I also created an animation that vibrates
-            the strings.
+            the strings. The lighting uses HemisphereLight for ambient lighting
+            and SpotLight for directional lighting.
+            <img
+              src="./assets/images/string_animation.jpg"
+              alt="String animation"
+              class="img-fluid mb-2 mt-2"
+            />
           </li>
           <li>
             <strong>Guitar Amplifier - Blender</strong><br />
@@ -119,7 +124,10 @@
           with the 3D animations, and so the strum and amp sound effects are
           triggered on the button click to match the animations. The information
           panel swaps the content based on the selected model and uses dropdown
-          sections for the descriptions of the guitar parts.
+          sections for the descriptions of the guitar parts. I also added a
+          video to the guitar information panel to show a video explainng the
+          guitar parts, and photos for each part section to help users identify
+          the parts on the 3D model.
         </p>
       </div>
       <div class="mt-4">
@@ -132,14 +140,117 @@
       </div>
       <div class="mt-4">
         <h2>Implementation</h2>
+        <h3>Testing strategy</h3>
         <p>
-          
+          <strong>Functional testing:</strong> I verified the models loaded
+          correctly, the buttons performed as expected, the wireframe toggle
+          worked, the audio playback worked, and the animations triggered on the
+          button click. <br />
+          <strong>Responsive testing:</strong> I tested the website on different
+          screen sizes e.g. mobile and tablet, to ensure the 3d canvas and
+          information panel is still usable. <br />
+          <strong>Testing fixes:</strong> I adjusted the lighting to ensure model
+          is visible at all angles. F
         </p>
+      </div>
+      <div class="mt-4">
+        <h2>Deeper Understanding</h2>
+        <ol>
+          <li>
+            I used shape keys in Blender to create the string vibration
+            animation.
+          </li>
+          <li>
+            I used animation logic to control the animations e.g. LoopOnce to
+            loop the animation once, and reverse playback using timeScale.
+          </li>
+          <li>
+            I directly changed the model using javascript, using
+            material.emmissive and emiissiveIntensity to simulate the amp
+            indicator light turning on/off.
+          </li>
+          <li>
+            I used details dropdowns to provide information about each guitar
+            part, using innerHTML to replace the information based on the
+            selected model.
+          </li>
+        </ol>
+      </div>
+      <div class="mt-4">
+        <h2>Implementation and Publications</h2>
+        <p>
+          I have added an about page. I also have zipped and unzipped my
+          project, opening it in VS code and running via a local web server to
+          ensure everything loads correctly.
+        </p>
+      </div>
+      <div class="mt-4"></div>
+      <h2>Generative AI Usage Record</h2>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Use Case</th>
+            <th>Tool</th>
+            <th>Outcome</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Debugging JavaScript/Three.JS model loading</td>
+            <td>Abacus.AI</td>
+            <td>
+              Identified why the variables/functions were not available
+              globally, due to missing brackets/script tags.
+            </td>
+          </tr>
+          <tr>
+            <td>Plectrum texture</td>
+            <td>Abacus.AI</td>
+            <td>
+              Used the Blender function 'Project From View (Bounds)' to allow an
+              image texture to be applied to the plectrum model, and fixed the
+              issue of the other side of the plectrum being mirrored by flipping
+              the UVs.
+            </td>
+          </tr>
+          <tr>
+            <td>Audio not playing</td>
+            <td>Abacus.AI</td>
+            <td>
+              Found incorrect path file names and fixed the issues by ensuring
+              the file names were consistent.
+            </td>
+          </tr>
+          <tr>
+            <td>Model not appearing in the viewer</td>
+            <td>Abacus.AI</td>
+            <td>
+              Found the issue was due to the loadModel and animate functions
+              being inside a conditional statement, due to incorrect bracket
+              placement, meanign they were never executed. By moving them
+              outside the conditional statement, the model loaded and the
+              animations worked.
+            </td>
+          </tr>
+          <tr>
+            <td>The guitar neck mirror didnt export properly</td>
+            <td>Abacus.AI</td>
+            <td>
+              Identified that the mirror modifier in Blender wasn't applied
+              before exporting, meaning the mirrored part of the guitar neck
+              didn't appear. By applying the mirror and exporting, the issue was
+              fixed.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Generative AI was used to provide descriptions for the guitar, amp and plectrum.</p>
     </div>
+
 
     <!-- FOOTER -->
     <footer class="bg-dark text-white text-center py-2 mt-3">
-      <small>Guitar Setup 3D App &copy; 2026 | University of Sussex</small>
+      <small>Guitar Rig 3D App &copy; 2026 | University of Sussex</small>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
