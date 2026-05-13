@@ -29,3 +29,8 @@
   height: 60vh;
   display: block;
 }
+
+#gui-container {
+  width: 100%;
+  z-index: 1000;
+}
