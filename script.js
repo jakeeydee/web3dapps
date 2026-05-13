@@ -13,8 +13,8 @@ var scene,
 
 var currentModel = null;
 
-const ampSound = new Audio("./assets/guitar_amp_sound.mp3");
-const strumSound = new Audio("./assets/guitar_strum_sound.mp3");
+const ampSound = new Audio("./assets/guitar_amp.mp3");
+const strumSound = new Audio("./assets/guitar_strum.mp3");
 
 let ampIsOn = false;
 
@@ -135,10 +135,12 @@ function init() {
         if (!ampIsOn) {
           ampIsOn = true;
           btn.textContent = "Turn Off";
+          ampSound.currentTime = 0;
+          ampSound.play();
 
           currentModel.traverse(function (child) {
-            if (child.isMesh && child.name === 'Sphere') { // match your object name in Blender
-              child.material.emissive.set(0xff0000); // red glow
+            if (child.isMesh && child.name === 'Sphere') { 
+              child.material.emissive.set(0xff0000);
               child.material.emissiveIntensity = 2;
             }
           });
@@ -156,6 +158,7 @@ function init() {
         } else {
           ampIsOn = false;
           btn.textContent = "Turn On";
+          ampSound.pause();
 
           currentModel.traverse(function (child) {
             if (child.isMesh && child.name === 'Sphere') {
@@ -188,6 +191,8 @@ function loadModel(name) {
   if (currentModel) {
     scene.remove(currentModel);
     currentModel = null;
+    ampSound.pause();
+    strumSound.pause();
   }
   actions = [];
   mixer = null;
@@ -223,7 +228,7 @@ function loadModel(name) {
       btn.className = "btn btn-warning btn-sm w-100 mb-2";
       updateInfo('acoustic_guitar');
 
-      camera.position.set(0, 0, 3);
+      camera.position.set(0, 0, 1.5);
       controls.target.set(0, 0, 0);
       controls.update();
     } else if (name === "amp") {
