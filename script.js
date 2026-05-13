@@ -304,11 +304,20 @@ const infoContent = {
   acoustic_guitar: `
   <h5 class="text-warning">Acoustic Guitar</h5>
   <p class="small">An acoustic guitar produces sound through the vibration of its strings, 
-  which resonates through the hollow body. Click each part to learn more.</p>
+  which resonates through the hollow body. Click each part to learn more and try to find each part on the 3D model!</p>
+
+  <div class="ratio ratio-16x9 mb-3">
+    <video controls>
+      <source src="./assets/videos/guitar_video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
   <hr class="border-secondary">
 
   <details class="mb-2">
     <summary class="text-warning" style="cursor:pointer;">Body</summary>
+    <img src="./assets/images/body.jpg" alt="Guitar Body" class="img-fluid rounded mb-2 mt-1">
     <p class="small mt-1">The large hollow section of the guitar. Acts as a resonance 
     chamber — string vibrations resonate through the body to project sound. Wood type 
     (spruce, mahogany) significantly affects tone.</p>
@@ -316,6 +325,7 @@ const infoContent = {
 
   <details class="mb-2">
     <summary class="text-warning" style="cursor:pointer;">Neck</summary>
+    <img src="./assets/images/neck.jpg" alt="Guitar Neck" class="img-fluid rounded mb-2 mt-1">
     <p class="small mt-1">The long thin section extending from the body. Holds the 
     fretboard and provides a surface for the fretting hand. Usually made from maple 
     or mahogany.</p>
@@ -323,18 +333,21 @@ const infoContent = {
 
   <details class="mb-2">
     <summary class="text-warning" style="cursor:pointer;">Headstock</summary>
+    <img src="./assets/images/headstock.jpg" alt="Guitar Headstock" class="img-fluid rounded mb-2 mt-1">
     <p class="small mt-1">Sits at the top of the neck and holds the tuning pegs. 
     The strings are anchored here at the top of the guitar. Shape varies by manufacturer.</p>
   </details>
 
   <details class="mb-2">
     <summary class="text-warning" style="cursor:pointer;">Tuning Pegs</summary>
+    <img src="./assets/images/tuning_peg.jpg" alt="Guitar Tuning Pegs" class="img-fluid rounded mb-2 mt-1">
     <p class="small mt-1">Metal mechanisms on the headstock used to tighten or loosen 
     each string to change its pitch. Clockwise raises pitch, anticlockwise lowers it.</p>
   </details>
 
   <details class="mb-2">
     <summary class="text-warning" style="cursor:pointer;">Nut</summary>
+    <img src="./assets/images/nut.jpg" alt="Guitar Nut" class="img-fluid rounded mb-2 mt-1">
     <p class="small mt-1">A small strip of bone, plastic or graphite at the top of the 
     fretboard. Spaces the strings evenly and sets string height. A poorly cut nut 
     causes tuning problems.</p>
@@ -342,6 +355,7 @@ const infoContent = {
 
   <details class="mb-2">
     <summary class="text-warning" style="cursor:pointer;">Bridge</summary>
+    <img src="./assets/images/bridge.jpg" alt="Guitar Bridge" class="img-fluid rounded mb-2 mt-1">
     <p class="small mt-1">Anchors the strings to the body at the lower end. On an 
     acoustic guitar it transfers string vibration directly into the soundboard. 
     The saddle inside the bridge sets string height and intonation.</p>
@@ -349,6 +363,7 @@ const infoContent = {
 
   <details class="mb-2">
     <summary class="text-warning" style="cursor:pointer;">Soundhole</summary>
+    <img src="./assets/images/soundhole.jpg" alt="Guitar Soundhole" class="img-fluid rounded mb-2 mt-1">
     <p class="small mt-1">The circular opening in the top of the body. Allows sound 
     to project outward from the resonating chamber. Size and position affect 
     volume and tonal balance.</p>
@@ -356,6 +371,7 @@ const infoContent = {
 
   <details class="mb-2">
     <summary class="text-warning" style="cursor:pointer;">Frets</summary>
+    <img src="./assets/images/fret.jpg" alt="Guitar Frets" class="img-fluid rounded mb-2 mt-1">
     <p class="small mt-1">Thin metal strips across the fretboard. Pressing a string 
     behind a fret shortens its vibrating length, raising the pitch by one semitone 
     per fret. The 12th fret is one octave above the open string.</p>
@@ -363,6 +379,7 @@ const infoContent = {
 
   <details class="mb-2">
     <summary class="text-warning" style="cursor:pointer;">Strings</summary>
+    <img src="./assets/images/strings.jpg" alt="Guitar Strings" class="img-fluid rounded mb-2 mt-1">
     <p class="small mt-1">The six strings are tuned E, A, D, G, B, E (low to high). 
     Acoustic strings are typically phosphor bronze. Lighter gauges are easier to play; 
     heavier gauges give more volume and sustain.</p>
