@@ -1,5 +1,5 @@
 .logo {
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   font-size: 1.8rem;
   letter-spacing: 2px;
   color: #f0a500;
@@ -16,14 +16,14 @@
   height: 100% !important;
 }
 
-/* Remove default spacing so the 3D canvas fills its container */
-.container-fluid, .row, .col-sm-10 {
+.container-fluid,
+.row,
+.col-sm-10 {
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
 
-/* Control the canvas viewport height */
 #threeContainer {
   width: 100%;
   height: 60vh;
@@ -33,4 +33,40 @@
 #gui-container {
   width: 100%;
   z-index: 1000;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 800px;
+}
+table.table-bordered th,
+table.table-bordered td {
+  border: 2px solid black;
+  padding: 10px;
+  text-align: left;
+}
+
+img.about-img {
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  display: block;
+  max-width: 400px;
+  margin: 20px auto;
+  position: relative;
+}
+img.about-img.clicked {
+  transform: scale(1.5);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+img.about-img + small {
+  display: block;
+  color: #888;
+  font-size: 0.8rem;
+  margin-bottom: 12px;
 }
